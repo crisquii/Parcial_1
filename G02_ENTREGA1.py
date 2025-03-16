@@ -1,61 +1,61 @@
 class Nodo:
     def __init__(self, data):
-        self.data = data
-        self.siguiente = None
+        self.data = data # O(1)
+        self.siguiente = None # O(1)
 
 class ListaParadas:
     def __init__(self):
-        self.cabeza = None
+        self.cabeza = None # O(1)
     
     def vacio(self):
-        if self.cabeza is None:
-            print("No hay ninguna parada")
+        if self.cabeza is None: # O(1)
+            print("No hay ninguna parada") # O(1)
         else:
-            print("Se encuentran paradas")
+            print("Se encuentran paradas") # O(1)
     
     def contar(self):
-        contador = 0
-        control = self.cabeza
-        while control != None:
-            contador += 1
-            control = control.siguiente
-        print(f"Hay un total de {contador} paradas")
+        contador = 0 # O(1)
+        control = self.cabeza # O(1)
+        while control != None: # O(n)
+            contador += 1 # O(1)
+            control = control.siguiente # O(1)
+        print(f"Hay un total de {contador} paradas") # O(1)
     
     def imprimir(self):
-        control = self.cabeza
-        if control == None:
-            print("No hay paradas en la lista.")
+        control = self.cabeza # O(1)
+        if control == None: # O(1)
+            print("No hay paradas en la lista.") # O(1)
             return
-        print("Listado de paradas:")
-        while control != None:
-            print(f"La parada {control.data}")
-            control = control.siguiente
+        print("Listado de paradas:") # O(1)
+        while control != None: # O(n)
+            print(f"La parada {control.data}") # O(1)
+            control = control.siguiente # O(1)
     
-    def agregar(self, dato):
-        nuevo_nodo = Nodo(dato)
-        nuevo_nodo.siguiente = self.cabeza
-        self.cabeza = nuevo_nodo
+    def agregar(self, dato): 
+        nuevo_nodo = Nodo(dato) # O(1)
+        nuevo_nodo.siguiente = self.cabeza # O(1)
+        self.cabeza = nuevo_nodo # O(1)
     
     def busqueda(self, dato):
-        control = self.cabeza
-        contador = 1 
-        while control.data == dato or control == None:
-             contador += 1
-             control = control.siguiente
-        if(control == None):
-            print("La parada no se encunetra en la lista")
+        control = self.cabeza # O(1)
+        contador = 1  # O(1)
+        while control.data == dato or control == None: # O(n)
+             contador += 1 # O(1)
+             control = control.siguiente # O(1)
+        if(control == None): # O(1)
+            print("La parada no se encunetra en la lista") # O(1)
         else:
-            print(f"La parada se encuentra en la posicion {contador}")
+            print(f"La parada se encuentra en la posicion {contador}") # O(1)
     
     def eliminarParada(self):
-        if self.cabeza != None:
-            print(f"Eliminando la parada: {self.cabeza.data}")
-            self.cabeza = self.cabeza.siguiente
+        if self.cabeza != None: # O(1)
+            print(f"Eliminando la parada: {self.cabeza.data}") # O(1)
+            self.cabeza = self.cabeza.siguiente # O(1)
         else:
-            print("No hay paradas para eliminar")
+            print("No hay paradas para eliminar") # O(1)
 
 # Ejemplo de uso
-lista_paradas = ListaParadas()
+lista_paradas = ListaParadas() 
 lista_paradas.agregar("Centro Comercial Cacique")
 lista_paradas.agregar("Avenida Principal")
 lista_paradas.agregar("Plaza Satelite")
