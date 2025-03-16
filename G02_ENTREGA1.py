@@ -54,6 +54,10 @@ class ListaParadas:
         else:
             print("No hay paradas para eliminar") # O(1)
 
+# # # 
+# La complejidad general dominante es O(n) ya que en el peor caso, los bucles While tienen que recorrer toda la lista.
+# # #
+
 # Ejemplo de uso
 lista_paradas = ListaParadas() 
 lista_paradas.agregar("Centro Comercial Cacique")
